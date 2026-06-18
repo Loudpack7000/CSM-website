@@ -56,7 +56,7 @@ export const GALLERY_SECTIONS = [
       {
         src: '/gallery/cedar-shingle-maintenance.jpg',
         alt: 'Large cedar roof showing restored section next to weathered shakes',
-        caption: 'Major restoration — before and after on one roof',
+        caption: 'Cleaning in progress',
       },
     ],
   },
