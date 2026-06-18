@@ -1,5 +1,6 @@
 import { CheckCircle2, Calendar, Lightbulb } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { BUSINESS } from '../constants/business';
 
 export default function Services() {
   const treatments = [
@@ -27,23 +28,23 @@ export default function Services() {
   return (
     <div className="bg-white pb-24">
       {/* Page Header */}
-      <div className="bg-slate-900 py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">Our Services</h1>
-          <p className="mt-6 max-w-2xl mx-auto text-lg leading-8 text-slate-300">
-            Comprehensive care to keep your cedar roof performing beautifully for decades.
+      <div className="bg-slate-900 py-16 sm:py-24 lg:py-32">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">Our Services</h1>
+          <p className="mt-4 sm:mt-6 max-w-2xl mx-auto text-base sm:text-lg leading-8 text-slate-300">
+            Comprehensive care to keep your cedar roof performing beautifully for decades. Serving {BUSINESS.serviceArea}.
           </p>
         </div>
       </div>
 
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 mt-16 sm:mt-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16 lg:mt-24">
         
         {/* Treatment Options */}
         <div className="mb-24">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 mb-12 text-center">Cedar Treatment Options</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 mb-8 sm:mb-12 text-center">Cedar Treatment Options</h2>
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
             {treatments.map((item) => (
-              <div key={item.title} className="bg-slate-50 rounded-2xl p-8 border border-slate-100 shadow-sm">
+              <div key={item.title} className="bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-100 shadow-sm">
                 <h3 className="text-xl font-semibold text-primary-800 mb-4">{item.title}</h3>
                 <p className="text-slate-600 leading-relaxed">{item.desc}</p>
               </div>
@@ -51,19 +52,19 @@ export default function Services() {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           
           {/* Maintenance Schedule */}
           <div>
             <div className="flex items-center gap-3 mb-8">
               <Calendar className="h-8 w-8 text-primary-600" />
-              <h2 className="text-3xl font-bold tracking-tight text-slate-900">Maintenance Schedule</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">Maintenance Schedule</h2>
             </div>
             <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
               <ul className="divide-y divide-slate-200">
                 {schedule.map((item) => (
-                  <li key={item.period} className="flex items-center gap-6 p-6 hover:bg-slate-50 transition-colors">
-                    <span className="font-semibold text-primary-700 whitespace-nowrap w-32">{item.period}</span>
+                  <li key={item.period} className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 p-4 sm:p-6 hover:bg-slate-50 transition-colors">
+                    <span className="font-semibold text-primary-700 sm:whitespace-nowrap sm:w-32">{item.period}</span>
                     <span className="text-slate-700">{item.task}</span>
                   </li>
                 ))}
@@ -75,9 +76,9 @@ export default function Services() {
           <div>
             <div className="flex items-center gap-3 mb-8">
               <Lightbulb className="h-8 w-8 text-cedar-500" />
-              <h2 className="text-3xl font-bold tracking-tight text-slate-900">Quick Homeowner Tips</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">Quick Homeowner Tips</h2>
             </div>
-            <div className="bg-cedar-100/50 rounded-2xl p-8 border border-cedar-100">
+            <div className="bg-cedar-100/50 rounded-2xl p-6 sm:p-8 border border-cedar-100">
               <ul className="space-y-6">
                 <li className="flex gap-4">
                   <CheckCircle2 className="h-6 w-6 text-cedar-600 flex-shrink-0" />

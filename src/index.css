@@ -26,8 +26,13 @@
 }
 
 @layer base {
+  html {
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+  }
+
   body {
-    @apply text-slate-700 bg-white antialiased;
+    @apply text-slate-700 bg-white antialiased overflow-x-hidden;
     font-family: var(--font-sans);
   }
 
@@ -35,5 +40,19 @@
     @apply text-slate-900 tracking-tight;
     font-family: var(--font-display);
     font-weight: 400;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+
+  @media (min-width: 640px) {
+    input,
+    select,
+    textarea {
+      font-size: inherit;
+    }
   }
 }

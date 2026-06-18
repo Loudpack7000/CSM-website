@@ -15,6 +15,7 @@ import {
   BadgeCheck,
   ArrowRight,
 } from 'lucide-react';
+import { BUSINESS } from '../constants/business';
 
 export default function Home() {
   const benefits = [
@@ -101,29 +102,29 @@ export default function Home() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/65 to-slate-900/85" />
         </div>
-        <div className="mx-auto max-w-7xl px-6 py-32 sm:py-44 lg:px-8 lg:py-52">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-24 sm:py-36 lg:px-8 lg:py-52">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="inline-flex items-center rounded-full bg-cedar-600/90 px-4 py-1.5 text-sm font-semibold text-white mb-6 tracking-wide uppercase">
-              Cedar Shingle Specialists
+            <p className="inline-flex items-center rounded-full bg-cedar-600/90 px-3 sm:px-4 py-1.5 text-xs sm:text-sm font-semibold text-white mb-4 sm:mb-6 tracking-wide uppercase">
+              Cedar Shingle Specialists · {BUSINESS.city}, {BUSINESS.stateAbbr}
             </p>
-            <h1 className="text-4xl sm:text-6xl text-white drop-shadow-md leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl text-white drop-shadow-md leading-tight">
               Simple care keeps your home beautiful and protected for decades.
             </h1>
-            <p className="mt-6 text-lg leading-8 text-slate-200 font-medium max-w-xl mx-auto">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-8 text-slate-200 font-medium max-w-xl mx-auto px-2">
               Specialized Cedar Shingle & Tile Maintenance, Cleaning, and Treatments.
             </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
+            <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-x-6 px-4">
               <Link
                 to="/contact"
-                className="rounded-lg bg-primary-600 px-8 py-4 text-lg font-semibold text-white shadow-lg hover:bg-primary-500 hover:-translate-y-0.5 transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
+                className="w-full sm:w-auto rounded-lg bg-primary-600 px-8 py-4 min-h-[48px] text-base sm:text-lg font-semibold text-white shadow-lg hover:bg-primary-500 hover:-translate-y-0.5 transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 flex items-center justify-center"
               >
                 Get a Free Quote
               </Link>
               <a
-                href="tel:5551234567"
-                className="hidden sm:inline-flex text-base font-semibold text-white/90 hover:text-white transition-colors"
+                href={`tel:${BUSINESS.phoneTel}`}
+                className="text-base font-semibold text-white/90 hover:text-white transition-colors min-h-[44px] flex items-center"
               >
-                Or call (555) 123-4567 →
+                Or call {BUSINESS.phone} →
               </a>
             </div>
           </div>
@@ -158,7 +159,7 @@ export default function Home() {
               {benefits.map((benefit, index) => (
                 <div
                   key={benefit.title}
-                  className={`flex flex-col bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 border border-slate-100 ${
+                  className={`flex flex-col bg-white rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow duration-300 border border-slate-100 ${
                     index < 3 ? 'lg:col-span-2' : 'lg:col-span-3'
                   }`}
                 >
@@ -220,12 +221,12 @@ export default function Home() {
               {steps.map((step, index) => (
                 <div
                   key={step.num}
-                  className={`group relative overflow-hidden rounded-2xl border border-slate-100 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-cedar-200 hover:shadow-lg ${
+                  className={`group relative overflow-hidden rounded-2xl border border-slate-100 bg-white p-6 sm:p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-cedar-200 hover:shadow-lg ${
                     index < 3 ? 'lg:col-span-2' : 'lg:col-span-3'
                   }`}
                 >
                   <span
-                    className="pointer-events-none absolute -right-1 -top-3 text-7xl font-bold text-slate-100 transition-colors duration-300 group-hover:text-cedar-50"
+                    className="pointer-events-none absolute -right-1 -top-3 text-5xl sm:text-7xl font-bold text-slate-100 transition-colors duration-300 group-hover:text-cedar-50"
                     style={{ fontFamily: 'var(--font-sans)' }}
                     aria-hidden="true"
                   >
@@ -252,18 +253,17 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="mt-14 flex flex-col items-stretch sm:items-center justify-center gap-4 px-4 sm:px-0">
             <Link
               to="/services"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-primary-700 hover:text-primary-600 transition-colors"
+              className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-primary-700 hover:text-primary-600 transition-colors min-h-[44px]"
             >
               View our full maintenance schedule
               <ArrowRight className="h-4 w-4" />
             </Link>
-            <span className="hidden sm:inline text-slate-300" aria-hidden="true">|</span>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 rounded-lg bg-primary-700 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-primary-600 transition-colors"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary-700 px-6 py-3 min-h-[48px] text-sm font-semibold text-white shadow-sm hover:bg-primary-600 transition-colors w-full sm:w-auto"
             >
               Schedule Your First Inspection
             </Link>
@@ -275,26 +275,27 @@ export default function Home() {
       <div className="bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900">
         <div className="px-6 py-20 sm:px-6 sm:py-24 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl text-white sm:text-4xl">
+            <h2 className="text-2xl sm:text-4xl text-white">
               Ready to protect your home?
-              <br />
+              <br className="hidden sm:inline" />
+              <span className="sm:hidden"> </span>
               Don't wait until it's too late.
             </h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-primary-100">
+            <p className="mx-auto mt-4 sm:mt-6 max-w-xl text-base sm:text-lg leading-8 text-primary-100 px-2">
               Contact us today for a thorough inspection and a free, no-obligation quote.
             </p>
-            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="mt-8 sm:mt-10 flex flex-col items-stretch sm:items-center justify-center gap-4 px-4 sm:px-0">
               <Link
                 to="/contact"
-                className="rounded-lg bg-white px-8 py-3.5 text-base font-semibold text-primary-900 shadow-sm hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-colors duration-200"
+                className="rounded-lg bg-white px-8 py-3.5 min-h-[48px] text-base font-semibold text-primary-900 shadow-sm hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-colors duration-200 flex items-center justify-center"
               >
                 Request Free Quote
               </Link>
               <a
-                href="mailto:cedarshinglellc@gmail.com"
-                className="text-base font-semibold text-primary-100 hover:text-white transition-colors"
+                href={`mailto:${BUSINESS.email}`}
+                className="text-base font-semibold text-primary-100 hover:text-white transition-colors break-all text-center min-h-[44px] flex items-center justify-center"
               >
-                cedarshinglellc@gmail.com
+                {BUSINESS.email}
               </a>
             </div>
           </div>

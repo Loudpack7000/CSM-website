@@ -1,7 +1,16 @@
 import { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, Send, Loader2, AlertCircle } from 'lucide-react';
+import {
+  BUSINESS,
+  BUSINESS_ADDRESS_LINE1,
+  BUSINESS_ADDRESS_LINE2,
+  BUSINESS_MAPS_URL,
+} from '../constants/business';
 
 const FORM_ENDPOINT = 'https://formsubmit.co/ajax/cedarshinglellc@gmail.com';
+
+const inputClass =
+  'block w-full rounded-md border-0 py-3 px-4 text-base text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 leading-6';
 
 const initialFormData = {
   fullName: '',
@@ -52,7 +61,7 @@ export default function Contact() {
       setIsSubmitted(true);
       setFormData(initialFormData);
     } catch {
-      setError('Unable to send your request right now. Please call us or email cedarshinglellc@gmail.com directly.');
+      setError(`Unable to send your request right now. Please call us or email ${BUSINESS.email} directly.`);
     } finally {
       setIsSubmitting(false);
     }
@@ -64,79 +73,19 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-slate-50 min-h-screen py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center mb-16">
-          <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">Get Your Free Quote</h1>
-          <p className="mt-6 text-lg leading-8 text-slate-600">
+    <div className="bg-slate-50 min-h-screen py-16 sm:py-24 lg:py-32">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl text-center mb-10 sm:mb-16">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900">Get Your Free Quote</h1>
+          <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-8 text-slate-600">
             Protect your investment today. Fill out the form below or call us directly to schedule your professional cedar roof assessment.
           </p>
         </div>
 
-        <div className="mx-auto max-w-6xl grid lg:grid-cols-2 gap-16">
-
-          <div className="bg-primary-900 rounded-3xl p-10 sm:p-12 text-white shadow-xl">
-            <h3 className="text-2xl font-semibold mb-8">Contact Information</h3>
-            <p className="text-primary-100 mb-12 text-lg">
-              We respond to all inquiries within 24 hours. For immediate assistance, please call us.
-            </p>
-
-            <div className="space-y-8">
-              <div className="flex gap-6 items-start">
-                <div className="bg-primary-800/50 p-3 rounded-lg border border-primary-700/50">
-                  <Phone className="h-6 w-6 text-primary-300" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-primary-200 text-sm tracking-wide uppercase mb-1">Call Us Directly</h4>
-                  <a href="tel:5551234567" className="text-2xl font-semibold hover:text-primary-200 transition-colors">
-                    (555) 123-4567
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex gap-6 items-start">
-                <div className="bg-primary-800/50 p-3 rounded-lg border border-primary-700/50">
-                  <Mail className="h-6 w-6 text-primary-300" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-primary-200 text-sm tracking-wide uppercase mb-1">Email Us</h4>
-                  <a href="mailto:cedarshinglellc@gmail.com" className="text-lg font-semibold hover:text-primary-200 transition-colors break-all">
-                    cedarshinglellc@gmail.com
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex gap-6 items-start">
-                <div className="bg-primary-800/50 p-3 rounded-lg border border-primary-700/50">
-                  <MapPin className="h-6 w-6 text-primary-300" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-primary-200 text-sm tracking-wide uppercase mb-1">Service Area</h4>
-                  <p className="text-lg">Serving the local region and surrounding suburbs.</p>
-                </div>
-              </div>
-
-              <div className="flex gap-6 items-start">
-                <div className="bg-primary-800/50 p-3 rounded-lg border border-primary-700/50">
-                  <Clock className="h-6 w-6 text-primary-300" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-primary-200 text-sm tracking-wide uppercase mb-1">Business Hours</h4>
-                  <p className="text-lg">Mon-Fri: 8:00 AM - 6:00 PM<br />Sat: 9:00 AM - 2:00 PM</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-16 pt-8 border-t border-primary-800/50">
-              <p className="text-primary-200 italic">
-                "A little care goes a long way—protect your cedar roof and enjoy its beauty for decades."
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-3xl p-10 sm:p-12 shadow-sm border border-slate-100">
+        <div className="mx-auto max-w-6xl grid lg:grid-cols-2 gap-8 lg:gap-16">
+          <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 shadow-sm border border-slate-100 order-1 lg:order-2">
             {isSubmitted ? (
-              <div className="h-full flex flex-col items-center justify-center text-center space-y-4 min-h-[400px]">
+              <div className="h-full flex flex-col items-center justify-center text-center space-y-4 min-h-[320px] sm:min-h-[400px]">
                 <div className="h-16 w-16 bg-primary-100 rounded-full flex items-center justify-center mb-4">
                   <Send className="h-8 w-8 text-primary-600" />
                 </div>
@@ -145,13 +94,13 @@ export default function Contact() {
                 <button
                   type="button"
                   onClick={() => setIsSubmitted(false)}
-                  className="mt-4 text-sm font-semibold text-primary-700 hover:text-primary-600 transition-colors"
+                  className="mt-4 text-sm font-semibold text-primary-700 hover:text-primary-600 transition-colors min-h-[44px] px-4"
                 >
                   Submit another request
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
                 {error && (
                   <div className="flex items-start gap-3 rounded-lg bg-red-50 border border-red-200 p-4 text-red-800">
                     <AlertCircle className="h-5 w-5 flex-shrink-0 mt-0.5" />
@@ -159,82 +108,32 @@ export default function Contact() {
                   </div>
                 )}
 
-                <input
-                  type="text"
-                  name="_honey"
-                  tabIndex={-1}
-                  autoComplete="off"
-                  className="hidden"
-                  aria-hidden="true"
-                />
+                <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
 
                 <div>
                   <label htmlFor="fullName" className="block text-sm font-medium text-slate-700 mb-1">Full Name *</label>
-                  <input
-                    type="text"
-                    id="fullName"
-                    name="fullName"
-                    required
-                    value={formData.fullName}
-                    onChange={handleChange}
-                    className="block w-full rounded-md border-0 py-3 px-4 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
-                    placeholder="John Doe"
-                  />
+                  <input type="text" id="fullName" name="fullName" required value={formData.fullName} onChange={handleChange} className={inputClass} placeholder="John Doe" />
                 </div>
 
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                <div className="grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2">
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-1">Phone Number *</label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      required
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="block w-full rounded-md border-0 py-3 px-4 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
-                      placeholder="(555) 123-4567"
-                    />
+                    <input type="tel" id="phone" name="phone" required value={formData.phone} onChange={handleChange} className={inputClass} placeholder={BUSINESS.phone} />
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email Address *</label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="block w-full rounded-md border-0 py-3 px-4 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
-                      placeholder="john@example.com"
-                    />
+                    <input type="email" id="email" name="email" required value={formData.email} onChange={handleChange} className={inputClass} placeholder="john@example.com" />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="address" className="block text-sm font-medium text-slate-700 mb-1">Street Address *</label>
-                  <input
-                    type="text"
-                    id="address"
-                    name="address"
-                    required
-                    value={formData.address}
-                    onChange={handleChange}
-                    className="block w-full rounded-md border-0 py-3 px-4 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
-                    placeholder="123 Main St, City, State"
-                  />
+                  <label htmlFor="address" className="block text-sm font-medium text-slate-700 mb-1">Your Property Address *</label>
+                  <input type="text" id="address" name="address" required value={formData.address} onChange={handleChange} className={inputClass} placeholder="123 Main St, Northfield, IL" />
                 </div>
 
                 <div>
                   <label htmlFor="service" className="block text-sm font-medium text-slate-700 mb-1">Service Needed *</label>
-                  <select
-                    id="service"
-                    name="service"
-                    required
-                    value={formData.service}
-                    onChange={handleChange}
-                    className="block w-full rounded-md border-0 py-3 px-4 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6 bg-white"
-                  >
+                  <select id="service" name="service" required value={formData.service} onChange={handleChange} className={`${inputClass} bg-white`}>
                     <option value="Inspection">Professional Inspection</option>
                     <option value="Cleaning">Cedar Roof Cleaning</option>
                     <option value="Repair">Roof Repair</option>
@@ -245,21 +144,13 @@ export default function Contact() {
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-1">Additional Details</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="block w-full rounded-md border-0 py-3 px-4 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
-                    placeholder="Tell us a bit about the age or condition of your roof..."
-                  />
+                  <textarea id="message" name="message" rows={4} value={formData.message} onChange={handleChange} className={inputClass} placeholder="Tell us a bit about the age or condition of your roof..." />
                 </div>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full rounded-md bg-primary-600 px-8 py-4 text-base font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 transition-colors mt-8 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="w-full rounded-md bg-primary-600 px-8 py-4 min-h-[48px] text-base font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 transition-colors mt-4 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   {isSubmitting ? (
                     <>
@@ -274,6 +165,70 @@ export default function Contact() {
             )}
           </div>
 
+          <div className="bg-primary-900 rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 text-white shadow-xl order-2 lg:order-1">
+            <h3 className="text-xl sm:text-2xl font-semibold mb-6 sm:mb-8">Contact Information</h3>
+            <p className="text-primary-100 mb-8 sm:mb-12 text-base sm:text-lg">
+              We respond to all inquiries within 24 hours. For immediate assistance, please call us.
+            </p>
+
+            <div className="space-y-6 sm:space-y-8">
+              <div className="flex gap-4 sm:gap-6 items-start">
+                <div className="bg-primary-800/50 p-3 rounded-lg border border-primary-700/50 flex-shrink-0">
+                  <Phone className="h-6 w-6 text-primary-300" />
+                </div>
+                <div className="min-w-0">
+                  <h4 className="font-medium text-primary-200 text-sm tracking-wide uppercase mb-1">Call Us Directly</h4>
+                  <a href={`tel:${BUSINESS.phoneTel}`} className="text-xl sm:text-2xl font-semibold hover:text-primary-200 transition-colors">
+                    {BUSINESS.phone}
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex gap-4 sm:gap-6 items-start">
+                <div className="bg-primary-800/50 p-3 rounded-lg border border-primary-700/50 flex-shrink-0">
+                  <Mail className="h-6 w-6 text-primary-300" />
+                </div>
+                <div className="min-w-0">
+                  <h4 className="font-medium text-primary-200 text-sm tracking-wide uppercase mb-1">Email Us</h4>
+                  <a href={`mailto:${BUSINESS.email}`} className="text-base sm:text-lg font-semibold hover:text-primary-200 transition-colors break-all">
+                    {BUSINESS.email}
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex gap-4 sm:gap-6 items-start">
+                <div className="bg-primary-800/50 p-3 rounded-lg border border-primary-700/50 flex-shrink-0">
+                  <MapPin className="h-6 w-6 text-primary-300" />
+                </div>
+                <div className="min-w-0">
+                  <h4 className="font-medium text-primary-200 text-sm tracking-wide uppercase mb-1">Business Address</h4>
+                  <address className="not-italic text-base sm:text-lg">
+                    <a href={BUSINESS_MAPS_URL} target="_blank" rel="noopener noreferrer" className="hover:text-primary-200 transition-colors">
+                      {BUSINESS_ADDRESS_LINE1}<br />
+                      {BUSINESS_ADDRESS_LINE2}
+                    </a>
+                  </address>
+                  <p className="mt-2 text-sm sm:text-base text-primary-200">{BUSINESS.serviceArea}</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4 sm:gap-6 items-start">
+                <div className="bg-primary-800/50 p-3 rounded-lg border border-primary-700/50 flex-shrink-0">
+                  <Clock className="h-6 w-6 text-primary-300" />
+                </div>
+                <div>
+                  <h4 className="font-medium text-primary-200 text-sm tracking-wide uppercase mb-1">Business Hours</h4>
+                  <p className="text-base sm:text-lg">{BUSINESS.hours.weekdays}<br />{BUSINESS.hours.saturday}</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-primary-800/50">
+              <p className="text-primary-200 italic text-sm sm:text-base">
+                "A little care goes a long way—protect your cedar roof and enjoy its beauty for decades."
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
