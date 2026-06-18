@@ -16,6 +16,7 @@ import {
   ArrowRight,
 } from 'lucide-react';
 import { BUSINESS } from '../constants/business';
+import { FEATURED_PHOTOS } from '../constants/gallery';
 
 export default function Home() {
   const benefits = [
@@ -97,8 +98,8 @@ export default function Home() {
         <div className="absolute inset-0 -z-10">
           <img
             src="/hero-cedar-roof.jpg"
-            alt="Beautiful cedar shingle home"
-            className="h-full w-full object-cover"
+            alt="Cedar shake roof restoration in progress on a Northfield home"
+            className="h-full w-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/65 to-slate-900/85" />
         </div>
@@ -267,6 +268,46 @@ export default function Home() {
             >
               Schedule Your First Inspection
             </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Featured Work */}
+      <div className="py-16 sm:py-24 bg-white border-t border-slate-100">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8 sm:mb-12">
+            <div>
+              <h2 className="text-base font-semibold leading-7 text-cedar-700 uppercase tracking-wide" style={{ fontFamily: 'var(--font-sans)' }}>
+                Real Projects
+              </h2>
+              <p className="mt-2 text-2xl sm:text-3xl lg:text-4xl">See Our Cedar Roof Work</p>
+            </div>
+            <Link
+              to="/gallery"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-primary-700 hover:text-primary-600 transition-colors min-h-[44px]"
+            >
+              View full gallery
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+            {FEATURED_PHOTOS.map((photo) => (
+              <Link
+                key={photo.src}
+                to="/gallery"
+                className="group rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={photo.src}
+                    alt={photo.alt}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <p className="p-4 text-sm font-medium text-slate-700">{photo.caption}</p>
+              </Link>
+            ))}
           </div>
         </div>
       </div>

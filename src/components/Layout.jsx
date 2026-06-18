@@ -11,6 +11,7 @@ const PAGE_TITLES = {
   '/': 'Cedar Shingle Maintenance | Free Roof Inspection',
   '/services': 'Services | Cedar Shingle Maintenance',
   '/about': 'About Us | Cedar Shingle Maintenance',
+  '/gallery': 'Our Work | Cedar Shingle Maintenance',
   '/contact': 'Contact | Cedar Shingle Maintenance',
 };
 

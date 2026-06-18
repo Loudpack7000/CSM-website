@@ -115,6 +115,20 @@ export default function Services() {
           </div>
           
         </div>
+
+        <div className="mb-24">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 mb-6 sm:mb-8 text-center">
+            Cedar Maintenance at a Glance
+          </h2>
+          <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-white">
+            <img
+              src="/gallery/services-infographic.png"
+              alt="Infographic explaining cedar tile maintenance steps, treatment options, and schedule"
+              className="w-full h-auto"
+              loading="lazy"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
