@@ -99,6 +99,7 @@ export default function Home() {
           <img
             src="/hero-cedar-roof.jpg"
             alt="Cedar shake roof restoration in progress on a Northfield home"
+            fetchPriority="high"
             className="h-full w-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/65 to-slate-900/85" />
@@ -109,15 +110,18 @@ export default function Home() {
               Cedar Shingle Specialists · {BUSINESS.city}, {BUSINESS.stateAbbr}
             </p>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl text-white drop-shadow-md leading-tight">
-              Simple care keeps your home beautiful and protected for decades.
+              Cedar Roof Experts in {BUSINESS.city}, {BUSINESS.stateAbbr}
             </h1>
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-8 text-slate-200 font-medium max-w-xl mx-auto px-2">
+            <p className="mt-4 sm:mt-5 text-lg sm:text-2xl text-white/95 leading-snug max-w-2xl mx-auto px-2" style={{ fontFamily: 'var(--font-display)' }}>
+              Simple care keeps your home beautiful and protected for decades.
+            </p>
+            <p className="mt-3 sm:mt-4 text-base sm:text-lg leading-8 text-slate-200 font-medium max-w-xl mx-auto px-2">
               Specialized Cedar Shingle & Tile Maintenance, Cleaning, and Treatments.
             </p>
             <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-x-6 px-4">
               <Link
                 to="/contact"
-                className="w-full sm:w-auto rounded-lg bg-primary-600 px-8 py-4 min-h-[48px] text-base sm:text-lg font-semibold text-white shadow-lg hover:bg-primary-500 hover:-translate-y-0.5 transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 flex items-center justify-center"
+                className="w-full sm:w-auto rounded-lg bg-primary-600 px-8 py-4 min-h-[48px] text-base sm:text-lg font-semibold text-white shadow-lg shadow-primary-900/25 hover:bg-primary-500 hover:shadow-xl hover:shadow-primary-900/30 hover:-translate-y-0.5 transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 flex items-center justify-center"
               >
                 Get a Free Quote
               </Link>

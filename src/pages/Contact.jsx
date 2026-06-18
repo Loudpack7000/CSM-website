@@ -147,10 +147,14 @@ export default function Contact() {
                   <textarea id="message" name="message" rows={4} value={formData.message} onChange={handleChange} className={inputClass} placeholder="Tell us a bit about the age or condition of your roof..." />
                 </div>
 
+                <p className="text-center text-sm text-slate-500 mb-1">
+                  ✓ Free inspection &nbsp;·&nbsp; ✓ No obligation &nbsp;·&nbsp; ✓ Response within 24 hours
+                </p>
+
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full rounded-md bg-primary-600 px-8 py-4 min-h-[48px] text-base font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 transition-colors mt-4 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="w-full rounded-md bg-primary-600 px-8 py-4 min-h-[48px] text-base font-semibold text-white shadow-lg shadow-primary-900/20 hover:bg-primary-500 hover:shadow-xl hover:shadow-primary-900/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 transition-all mt-2 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   {isSubmitting ? (
                     <>
