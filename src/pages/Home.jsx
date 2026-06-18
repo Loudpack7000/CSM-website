@@ -49,35 +49,30 @@ export default function Home() {
 
   const steps = [
     {
-      num: '01',
       title: 'Inspect',
       frequency: '1–2× per year',
       desc: 'Check shingles, flashings, and trim. Look for signs of rot, loose tiles, or damage from severe weather.',
       icon: ClipboardCheck,
     },
     {
-      num: '02',
       title: 'Keep it Clean',
       frequency: 'Every 1–2 years',
       desc: 'Remove dirt, mildew, and moss with a soft brush and approved cleaner. We never use high-pressure washing that damages wood.',
       icon: Brush,
     },
     {
-      num: '03',
       title: 'Repair Promptly',
       frequency: 'As needed',
       desc: 'Replace damaged shingles, secure loose tiles, and check all caulking to ensure the roof remains watertight.',
       icon: Wrench,
     },
     {
-      num: '04',
       title: 'Treat & Protect',
       frequency: 'Every 3–5 years',
       desc: 'Apply premium penetrating cedar preservative or oil-based stain to guard against UV rays, moisture, and decay.',
       icon: ShieldPlus,
     },
     {
-      num: '05',
       title: 'Professional Maintenance',
       frequency: 'Ongoing',
       desc: 'Schedule expert inspections to catch what the untrained eye might miss. Peace of mind is just a phone call away.',
@@ -201,43 +196,16 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Desktop progress stepper */}
-          <div className="hidden lg:flex items-center max-w-5xl mx-auto mt-16 mb-4">
-            {steps.map((step, index) => (
-              <div key={step.num} className="flex items-center flex-1 last:flex-none">
-                <div className="flex flex-col items-center">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-primary-700 text-sm font-bold text-white shadow-md ring-4 ring-white">
-                    {step.num}
-                  </div>
-                  <span className="mt-3 text-xs font-semibold text-slate-700 text-center max-w-[7rem] leading-tight">
-                    {step.title}
-                  </span>
-                </div>
-                {index < steps.length - 1 && (
-                  <div className="flex-1 mx-3 h-0.5 bg-gradient-to-r from-primary-300 via-cedar-300 to-primary-300 rounded-full" />
-                )}
-              </div>
-            ))}
-          </div>
-
           {/* Step cards */}
-          <div className="mx-auto mt-12 lg:mt-8 max-w-6xl">
+          <div className="mx-auto mt-16 max-w-6xl">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
               {steps.map((step, index) => (
                 <div
-                  key={step.num}
+                  key={step.title}
                   className={`group relative overflow-hidden rounded-2xl border border-slate-100 bg-white p-6 sm:p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-cedar-200 hover:shadow-lg ${
                     index < 3 ? 'lg:col-span-2' : 'lg:col-span-3'
                   }`}
                 >
-                  <span
-                    className="pointer-events-none absolute -right-1 -top-3 text-5xl sm:text-7xl font-bold text-slate-100 transition-colors duration-300 group-hover:text-cedar-50"
-                    style={{ fontFamily: 'var(--font-sans)' }}
-                    aria-hidden="true"
-                  >
-                    {step.num}
-                  </span>
-
                   <div className="relative">
                     <div className="mb-5 flex items-start justify-between gap-4">
                       <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-cedar-100 to-primary-100 shadow-sm">
