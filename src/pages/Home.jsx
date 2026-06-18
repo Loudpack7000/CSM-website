@@ -1,5 +1,20 @@
 import { Link } from 'react-router-dom';
-import { Shield, Sparkles, Droplets, Home as HomeIcon, TrendingUp, Award, ShieldCheck, Users } from 'lucide-react';
+import {
+  Shield,
+  Sparkles,
+  Droplets,
+  Home as HomeIcon,
+  TrendingUp,
+  Award,
+  ShieldCheck,
+  Users,
+  ClipboardCheck,
+  Brush,
+  Wrench,
+  ShieldPlus,
+  BadgeCheck,
+  ArrowRight,
+} from 'lucide-react';
 
 export default function Home() {
   const benefits = [
@@ -33,28 +48,38 @@ export default function Home() {
   const steps = [
     {
       num: '01',
-      title: 'Inspect (1-2x/year)',
+      title: 'Inspect',
+      frequency: '1–2× per year',
       desc: 'Check shingles, flashings, and trim. Look for signs of rot, loose tiles, or damage from severe weather.',
+      icon: ClipboardCheck,
     },
     {
       num: '02',
-      title: 'Keep it Clean (1-2 years)',
+      title: 'Keep it Clean',
+      frequency: 'Every 1–2 years',
       desc: 'Remove dirt, mildew, and moss with a soft brush and approved cleaner. We never use high-pressure washing that damages wood.',
+      icon: Brush,
     },
     {
       num: '03',
-      title: 'Repair Promptly (As needed)',
+      title: 'Repair Promptly',
+      frequency: 'As needed',
       desc: 'Replace damaged shingles, secure loose tiles, and check all caulking to ensure the roof remains watertight.',
+      icon: Wrench,
     },
     {
       num: '04',
-      title: 'Treat & Protect (3-5 years)',
+      title: 'Treat & Protect',
+      frequency: 'Every 3–5 years',
       desc: 'Apply premium penetrating cedar preservative or oil-based stain to guard against UV rays, moisture, and decay.',
+      icon: ShieldPlus,
     },
     {
       num: '05',
       title: 'Professional Maintenance',
+      frequency: 'Ongoing',
       desc: 'Schedule expert inspections to catch what the untrained eye might miss. Peace of mind is just a phone call away.',
+      icon: BadgeCheck,
     },
   ];
 
@@ -154,34 +179,94 @@ export default function Home() {
       </div>
 
       {/* 5-Step Process Section */}
-      <div className="py-24 sm:py-32 bg-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:text-center">
-            <h2 className="text-base font-semibold leading-7 text-cedar-700 uppercase tracking-wide" style={{ fontFamily: 'var(--font-sans)' }}>Our Proven Method</h2>
-            <p className="mt-2 text-3xl sm:text-4xl">
-              5 Steps to a Perfect Cedar Roof
-            </p>
+      <div className="relative py-24 sm:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-white to-primary-50/30" aria-hidden="true" />
+        <div className="absolute -top-24 right-0 h-72 w-72 rounded-full bg-cedar-100/50 blur-3xl" aria-hidden="true" />
+        <div className="absolute bottom-0 left-0 h-64 w-64 rounded-full bg-primary-100/40 blur-3xl" aria-hidden="true" />
+
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-base font-semibold leading-7 text-cedar-700 uppercase tracking-wide" style={{ fontFamily: 'var(--font-sans)' }}>
+              Our Proven Method
+            </h2>
+            <p className="mt-2 text-3xl sm:text-4xl">5 Steps to a Perfect Cedar Roof</p>
             <p className="mt-6 text-lg leading-8 text-slate-600">
               We follow a strict, gentle, and effective process to ensure your roof lasts a lifetime without sustaining damage from harsh chemicals or high pressure.
             </p>
           </div>
-          <div className="mx-auto mt-16 max-w-3xl sm:mt-20 lg:mt-24">
-            <div className="space-y-12">
+
+          {/* Desktop progress stepper */}
+          <div className="hidden lg:flex items-center max-w-5xl mx-auto mt-16 mb-4">
+            {steps.map((step, index) => (
+              <div key={step.num} className="flex items-center flex-1 last:flex-none">
+                <div className="flex flex-col items-center">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-primary-700 text-sm font-bold text-white shadow-md ring-4 ring-white">
+                    {step.num}
+                  </div>
+                  <span className="mt-3 text-xs font-semibold text-slate-700 text-center max-w-[7rem] leading-tight">
+                    {step.title}
+                  </span>
+                </div>
+                {index < steps.length - 1 && (
+                  <div className="flex-1 mx-3 h-0.5 bg-gradient-to-r from-primary-300 via-cedar-300 to-primary-300 rounded-full" />
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Step cards */}
+          <div className="mx-auto mt-12 lg:mt-8 max-w-6xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
               {steps.map((step, index) => (
-                <div key={step.num} className="relative flex gap-x-8 items-start">
-                  {index !== steps.length - 1 && (
-                    <div className="absolute left-6 top-14 -bottom-12 w-0.5 bg-cedar-200" />
-                  )}
-                  <div className="relative flex h-12 w-12 flex-none items-center justify-center rounded-full bg-cedar-100 ring-8 ring-white">
-                    <span className="text-lg font-bold text-cedar-800" style={{ fontFamily: 'var(--font-sans)' }}>{step.num}</span>
+                <div
+                  key={step.num}
+                  className={`group relative overflow-hidden rounded-2xl border border-slate-100 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-cedar-200 hover:shadow-lg ${
+                    index < 3 ? 'lg:col-span-2' : 'lg:col-span-3'
+                  }`}
+                >
+                  <span
+                    className="pointer-events-none absolute -right-1 -top-3 text-7xl font-bold text-slate-100 transition-colors duration-300 group-hover:text-cedar-50"
+                    style={{ fontFamily: 'var(--font-sans)' }}
+                    aria-hidden="true"
+                  >
+                    {step.num}
+                  </span>
+
+                  <div className="relative">
+                    <div className="mb-5 flex items-start justify-between gap-4">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-cedar-100 to-primary-100 shadow-sm">
+                        <step.icon className="h-6 w-6 text-primary-700" aria-hidden="true" />
+                      </div>
+                      <span className="shrink-0 rounded-full border border-cedar-200 bg-cedar-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-cedar-800">
+                        {step.frequency}
+                      </span>
+                    </div>
+
+                    <h3 className="text-xl text-slate-900">{step.title}</h3>
+                    <p className="mt-3 text-base leading-7 text-slate-600">{step.desc}</p>
                   </div>
-                  <div className="flex-auto py-2">
-                    <h3 className="text-xl leading-8 text-slate-900">{step.title}</h3>
-                    <p className="mt-2 text-base leading-7 text-slate-600">{step.desc}</p>
-                  </div>
+
+                  <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-primary-600 to-cedar-500 transition-all duration-300 group-hover:w-full" aria-hidden="true" />
                 </div>
               ))}
             </div>
+          </div>
+
+          <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-primary-700 hover:text-primary-600 transition-colors"
+            >
+              View our full maintenance schedule
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <span className="hidden sm:inline text-slate-300" aria-hidden="true">|</span>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 rounded-lg bg-primary-700 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-primary-600 transition-colors"
+            >
+              Schedule Your First Inspection
+            </Link>
           </div>
         </div>
       </div>
