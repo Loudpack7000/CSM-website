@@ -1,0 +1,32 @@
+cedarshinglemaintenance.com
+Email: cedarshinglellc@gmail.com
+
+Questions to ask:
+-Tell me more about your services. 
+
+-Where is the company located? 
+
+-what is the business address as well as phone number and email. 
+
+-Do you have any photos or videos of your work? 
+
+
+-----------------------------------------------------------
+
+Notes for build:
+
+1. Cloudflare + GitHub (The Ultimate Setup)
+Yes, this is a brilliant idea. What you are describing is called "Continuous Deployment," and it is the industry standard.
+
+How it works: You host the code on a free GitHub repository. You connect that repo to Cloudflare Pages (which is 100% free). Every time you push an update to GitHub, Cloudflare automatically rebuilds the live website in about 30 seconds.
+
+Why it’s perfect: It costs zero dollars, includes a free SSL certificate (the little padlock icon so the site is secure), and Cloudflare's servers are incredibly fast, which Google loves for SEO.
+
+2. The CTA Strategy (Don't Cause "Analysis Paralysis")
+While having a phone number, email, and form seems like it gives the user options, giving them too many equal choices actually lowers conversions.
+
+Primary CTA (The Big Button): "Get a Free Quote" (This links to a form). Forms are best because you can force the client to give you exactly what you need (Name, Address, Type of Roof, etc.) before you ever speak to them.
+
+Secondary CTA (Top Right Corner): A clickable Phone Number. Some older folks or people with emergencies just want to call. Make it easy to find, but don't make it the main button.
+
+What to drop: The raw email address. Putting contact@cedarshingle.com on the site just invites automated spam bots to scrape it. Force them through the form.

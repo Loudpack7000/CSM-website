@@ -1,38 +1,66 @@
 import { useState } from 'react';
-import { Phone, MapPin, Clock, Send } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, Loader2, AlertCircle } from 'lucide-react';
+
+const FORM_ENDPOINT = 'https://formsubmit.co/ajax/cedarshinglellc@gmail.com';
+
+const initialFormData = {
+  fullName: '',
+  phone: '',
+  email: '',
+  address: '',
+  service: 'Inspection',
+  message: '',
+};
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    phone: '',
-    email: '',
-    address: '',
-    service: 'Inspection',
-    message: ''
-  });
-
+  const [formData, setFormData] = useState(initialFormData);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Simulate form submission
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        fullName: '',
-        phone: '',
-        email: '',
-        address: '',
-        service: 'Inspection',
-        message: ''
+    setIsSubmitting(true);
+    setError('');
+
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.fullName,
+          phone: formData.phone,
+          email: formData.email,
+          address: formData.address,
+          service: formData.service,
+          message: formData.message || 'No additional details provided.',
+          _subject: `New Quote Request: ${formData.service}`,
+          _template: 'table',
+          _captcha: 'false',
+        }),
       });
-    }, 5000);
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'Something went wrong. Please try again.');
+      }
+
+      setIsSubmitted(true);
+      setFormData(initialFormData);
+    } catch {
+      setError('Unable to send your request right now. Please call us or email cedarshinglellc@gmail.com directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   return (
@@ -46,8 +74,7 @@ export default function Contact() {
         </div>
 
         <div className="mx-auto max-w-6xl grid lg:grid-cols-2 gap-16">
-          
-          {/* Contact Information */}
+
           <div className="bg-primary-900 rounded-3xl p-10 sm:p-12 text-white shadow-xl">
             <h3 className="text-2xl font-semibold mb-8">Contact Information</h3>
             <p className="text-primary-100 mb-12 text-lg">
@@ -69,6 +96,18 @@ export default function Contact() {
 
               <div className="flex gap-6 items-start">
                 <div className="bg-primary-800/50 p-3 rounded-lg border border-primary-700/50">
+                  <Mail className="h-6 w-6 text-primary-300" />
+                </div>
+                <div>
+                  <h4 className="font-medium text-primary-200 text-sm tracking-wide uppercase mb-1">Email Us</h4>
+                  <a href="mailto:cedarshinglellc@gmail.com" className="text-lg font-semibold hover:text-primary-200 transition-colors break-all">
+                    cedarshinglellc@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex gap-6 items-start">
+                <div className="bg-primary-800/50 p-3 rounded-lg border border-primary-700/50">
                   <MapPin className="h-6 w-6 text-primary-300" />
                 </div>
                 <div>
@@ -83,11 +122,11 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-medium text-primary-200 text-sm tracking-wide uppercase mb-1">Business Hours</h4>
-                  <p className="text-lg">Mon-Fri: 8:00 AM - 6:00 PM<br/>Sat: 9:00 AM - 2:00 PM</p>
+                  <p className="text-lg">Mon-Fri: 8:00 AM - 6:00 PM<br />Sat: 9:00 AM - 2:00 PM</p>
                 </div>
               </div>
             </div>
-            
+
             <div className="mt-16 pt-8 border-t border-primary-800/50">
               <p className="text-primary-200 italic">
                 "A little care goes a long way—protect your cedar roof and enjoy its beauty for decades."
@@ -95,18 +134,40 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Contact Form */}
           <div className="bg-white rounded-3xl p-10 sm:p-12 shadow-sm border border-slate-100">
             {isSubmitted ? (
-              <div className="h-full flex flex-col items-center justify-center text-center space-y-4">
+              <div className="h-full flex flex-col items-center justify-center text-center space-y-4 min-h-[400px]">
                 <div className="h-16 w-16 bg-primary-100 rounded-full flex items-center justify-center mb-4">
                   <Send className="h-8 w-8 text-primary-600" />
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900">Request Sent!</h3>
                 <p className="text-slate-600">Thank you for reaching out. We will contact you shortly with your free quote.</p>
+                <button
+                  type="button"
+                  onClick={() => setIsSubmitted(false)}
+                  className="mt-4 text-sm font-semibold text-primary-700 hover:text-primary-600 transition-colors"
+                >
+                  Submit another request
+                </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
+                {error && (
+                  <div className="flex items-start gap-3 rounded-lg bg-red-50 border border-red-200 p-4 text-red-800">
+                    <AlertCircle className="h-5 w-5 flex-shrink-0 mt-0.5" />
+                    <p className="text-sm">{error}</p>
+                  </div>
+                )}
+
+                <input
+                  type="text"
+                  name="_honey"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  className="hidden"
+                  aria-hidden="true"
+                />
+
                 <div>
                   <label htmlFor="fullName" className="block text-sm font-medium text-slate-700 mb-1">Full Name *</label>
                   <input
@@ -197,14 +258,22 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full rounded-md bg-primary-600 px-8 py-4 text-base font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 transition-colors mt-8"
+                  disabled={isSubmitting}
+                  className="w-full rounded-md bg-primary-600 px-8 py-4 text-base font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 transition-colors mt-8 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
-                  Request Free Quote
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="h-5 w-5 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    'Request Free Quote'
+                  )}
                 </button>
               </form>
             )}
           </div>
-          
+
         </div>
       </div>
     </div>

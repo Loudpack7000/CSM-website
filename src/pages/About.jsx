@@ -52,7 +52,7 @@ export default function About() {
           <div className="relative">
             <div className="absolute inset-0 bg-primary-100 rounded-3xl transform translate-x-4 translate-y-4 -z-10"></div>
             <img 
-              src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2069&auto=format&fit=crop" 
+              src="/about-team.jpg" 
               alt="Team inspecting a home" 
               className="rounded-3xl shadow-xl w-full object-cover h-[500px]"
             />
