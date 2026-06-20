@@ -1,8 +1,8 @@
 export const BUSINESS = {
   name: 'Cedar Shingle Maintenance',
   email: 'cedarshinglellc@gmail.com',
-  phone: '(555) 123-4567',
-  phoneTel: '5551234567',
+  phone: '(847) 924-1260',
+  phoneTel: '8479241260',
   street: '514 5th Street',
   city: 'Northfield',
   state: 'Illinois',
