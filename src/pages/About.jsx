@@ -54,8 +54,8 @@ export default function About() {
           <div className="relative">
             <div className="absolute inset-0 bg-primary-100 rounded-3xl transform translate-x-4 translate-y-4 -z-10"></div>
             <img 
-              src="/about-team.jpg" 
-              alt="Team inspecting a home" 
+              src="/gallery/maintenance-1.jpg" 
+              alt="Large brick home with cedar shake roof in Chicagoland" 
               className="rounded-2xl sm:rounded-3xl shadow-xl w-full object-cover h-64 sm:h-[400px] lg:h-[500px]"
             />
           </div>

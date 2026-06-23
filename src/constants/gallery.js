@@ -30,6 +30,11 @@ export const GALLERY_SECTIONS = [
         alt: 'Aerial view of a maintained cedar shake roof with solar panels',
         caption: 'Full roof overview after maintenance',
       },
+      {
+        src: '/gallery/maintenance-1.jpg',
+        alt: 'Large brick home with a weathered cedar shake roof under a clear blue sky',
+        caption: 'Cedar shake roof on brick residence — Chicagoland',
+      },
     ],
   },
   {
@@ -38,6 +43,31 @@ export const GALLERY_SECTIONS = [
     description:
       'Targeted shingle replacement and flashing work to stop leaks before they spread.',
     photos: [
+      {
+        src: '/gallery/tile-repair-damaged.jpg',
+        alt: 'Weathered cedar roof with bright new replacement shingles installed throughout',
+        caption: 'Individual shingle replacements across weathered cedar',
+      },
+      {
+        src: '/gallery/cedar-maintenance-chicago.jpg',
+        alt: 'Cedar roof with a vertical strip of new reddish-brown replacement shingles',
+        caption: 'Targeted cedar shingle repair — Chicago-area home',
+      },
+      {
+        src: '/gallery/cedar-shingle-maintenance1.jpg',
+        alt: 'New cedar shakes installed at roof ridge intersections on a weathered roof',
+        caption: 'New shakes at ridge intersections',
+      },
+      {
+        src: '/gallery/cedar-shingle-maintenance2.jpg',
+        alt: 'Cedar roof with new orange-toned shingles along the ridge and field areas',
+        caption: 'Ridge and field shingle replacements',
+      },
+      {
+        src: '/gallery/tile-shingle-repair.jpg',
+        alt: 'Steep cedar shingle roof with new replacement shakes mixed among weathered shingles',
+        caption: 'Steep-slope cedar shingle repair',
+      },
       {
         src: '/gallery/before-maintenance.jpg',
         alt: 'Cedar roof with new replacement shingles installed among weathered shakes',
@@ -63,7 +93,19 @@ export const GALLERY_SECTIONS = [
 ];
 
 export const FEATURED_PHOTOS = [
-  GALLERY_SECTIONS[0].photos[3],
-  GALLERY_SECTIONS[1].photos[3],
-  GALLERY_SECTIONS[0].photos[1],
+  {
+    src: '/gallery/maintenance-1.jpg',
+    alt: 'Large brick home with a weathered cedar shake roof under a clear blue sky',
+    caption: 'Cedar shake roof on brick residence — Chicagoland',
+  },
+  {
+    src: '/gallery/cedar-maintenance-chicago.jpg',
+    alt: 'Cedar roof with a vertical strip of new reddish-brown replacement shingles',
+    caption: 'Targeted cedar shingle repair — Chicago-area home',
+  },
+  {
+    src: '/gallery/tile-repair-damaged.jpg',
+    alt: 'Weathered cedar roof with bright new replacement shingles installed throughout',
+    caption: 'Individual shingle replacements across weathered cedar',
+  },
 ];
