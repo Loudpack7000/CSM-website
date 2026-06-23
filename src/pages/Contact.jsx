@@ -6,6 +6,7 @@ import {
   BUSINESS_ADDRESS_LINE2,
   BUSINESS_MAPS_URL,
 } from '../constants/business';
+import ServiceAreas from '../components/ServiceAreas';
 
 const FORM_ENDPOINT = 'https://formsubmit.co/ajax/cedarshinglellc@gmail.com';
 
@@ -212,7 +213,9 @@ export default function Contact() {
                       {BUSINESS_ADDRESS_LINE2}
                     </a>
                   </address>
-                  <p className="mt-2 text-sm sm:text-base text-primary-200">{BUSINESS.serviceArea}</p>
+                  <p className="mt-2 text-sm sm:text-base text-primary-200">
+                    Serving Chicagoland, Lake County &amp; southeastern Wisconsin
+                  </p>
                 </div>
               </div>
 
@@ -235,6 +238,8 @@ export default function Contact() {
           </div>
         </div>
       </div>
+
+      <ServiceAreas id="service-areas-contact" />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Award, ShieldCheck, Users } from 'lucide-react';
 import { BUSINESS, BUSINESS_ADDRESS_LINE1, BUSINESS_ADDRESS_LINE2 } from '../constants/business';
+import ServiceAreas from '../components/ServiceAreas';
 
 export default function About() {
   const stats = [
@@ -60,6 +61,8 @@ export default function About() {
           </div>
 
         </div>
+
+        <ServiceAreas className="mt-32" />
 
         {/* Core Values */}
         <div className="mt-32">

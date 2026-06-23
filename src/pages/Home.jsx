@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { BUSINESS } from '../constants/business';
 import { FEATURED_PHOTOS } from '../constants/gallery';
+import ServiceAreas from '../components/ServiceAreas';
 
 export default function Home() {
   const benefits = [
@@ -243,6 +244,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <ServiceAreas />
 
       {/* Featured Work */}
       <div className="py-16 sm:py-24 bg-white border-t border-slate-100">

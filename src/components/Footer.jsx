@@ -66,7 +66,13 @@ export default function Footer() {
                     {BUSINESS_ADDRESS_LINE1}<br />
                     {BUSINESS_ADDRESS_LINE2}
                   </a>
-                  <span className="block mt-2 text-sm text-slate-500">{BUSINESS.serviceArea}</span>
+                  <span className="block mt-2 text-sm text-slate-500">
+                    {BUSINESS.serviceArea}
+                    {' · '}
+                    <Link to="/#service-areas" className="text-cedar-500 hover:text-cedar-400 transition-colors">
+                      View all towns
+                    </Link>
+                  </span>
                 </address>
               </li>
             </ul>

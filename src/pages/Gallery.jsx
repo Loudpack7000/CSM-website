@@ -12,7 +12,7 @@ export default function Gallery() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl text-white">Our Work</h1>
           <p className="mt-4 sm:mt-6 max-w-2xl mx-auto text-base sm:text-lg leading-8 text-slate-300">
-            Real cedar shingle projects across Northfield and surrounding communities — cleaning, restoration, and repair.
+            Real cedar shingle projects across Chicagoland, Lake County & southeastern Wisconsin — cleaning, restoration, and repair.
           </p>
         </div>
       </div>

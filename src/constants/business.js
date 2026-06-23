@@ -8,7 +8,7 @@ export const BUSINESS = {
   state: 'Illinois',
   stateAbbr: 'IL',
   zip: '60093',
-  serviceArea: 'Northfield, IL & surrounding communities',
+  serviceArea: 'Chicagoland, Lake County & southeastern Wisconsin',
   hours: {
     weekdays: 'Mon–Fri: 8:00 AM – 6:00 PM',
     saturday: 'Sat: 9:00 AM – 2:00 PM',

@@ -1,6 +1,7 @@
 import { CheckCircle2, Calendar, Lightbulb } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { BUSINESS } from '../constants/business';
+import ServiceAreas from '../components/ServiceAreas';
 
 export default function Services() {
   const treatments = [
@@ -130,6 +131,8 @@ export default function Services() {
           </div>
         </div>
       </div>
+
+      <ServiceAreas showCta={false} className="!border-t-0" />
     </div>
   );
 }
