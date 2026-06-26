@@ -6,6 +6,16 @@ export const GALLERY_SECTIONS = [
       'Gentle soft-wash cleaning that removes moss, mildew, and weathering — without damaging cedar fibers.',
     photos: [
       {
+        src: '/gallery/shingle-cleaning.jpg',
+        alt: 'Soft-wash wand restoring weathered grey cedar shingles to natural tan wood color',
+        caption: 'Soft-wash cleaning — weathered vs. restored cedar',
+      },
+      {
+        src: '/gallery/tile-cleaning-2.jpg',
+        alt: 'Technician soft-washing cedar shingles at a roof peak with gentle equipment',
+        caption: 'Gentle cleaning at roof peak',
+      },
+      {
         src: '/gallery/during-cleaning-cedar.jpg',
         alt: 'Technician soft-washing cedar shingles on a residential roof',
         caption: 'Soft-wash cleaning in progress',
@@ -14,6 +24,16 @@ export const GALLERY_SECTIONS = [
         src: '/gallery/during-cleaning-progress.jpg',
         alt: 'Cedar roof showing cleaned and weathered sections side by side during treatment',
         caption: 'Restoration in progress — weathered vs. cleaned cedar',
+      },
+      {
+        src: '/gallery/tile-cleaning.jpg',
+        alt: 'Weathered cedar shingle roof viewed from the ridge with roof vents',
+        caption: 'Cedar roof surface before restoration',
+      },
+      {
+        src: '/gallery/tile-repair-4.jpg',
+        alt: 'Large weathered cedar shake roof with moss growth before maintenance',
+        caption: 'Weathered cedar roof — before cleaning and treatment',
       },
       {
         src: '/gallery/during-restoration-turret.jpg',
@@ -43,6 +63,46 @@ export const GALLERY_SECTIONS = [
     description:
       'Targeted shingle replacement and flashing work to stop leaks before they spread.',
     photos: [
+      {
+        src: '/gallery/roof-shingle-replace.jpg',
+        alt: 'Cedar roof with dormers showing new replacement shingles and active repair work',
+        caption: 'Active cedar shingle repair on dormered roof',
+      },
+      {
+        src: '/gallery/tile-repair-2.jpg',
+        alt: 'Large section of new orange-tan cedar shingles installed on weathered roof',
+        caption: 'Large-section shingle replacement',
+      },
+      {
+        src: '/gallery/replace-tile.jpg',
+        alt: 'Weathered cedar roof with scattered new replacement shingles throughout',
+        caption: 'Spot repairs across weathered cedar roof',
+      },
+      {
+        src: '/gallery/tile-replace-4.jpg',
+        alt: 'Cedar shake roof with new shingle patches overlooking suburban neighborhood',
+        caption: 'Shingle replacements — suburban cedar roof',
+      },
+      {
+        src: '/gallery/tile-repair.jpg',
+        alt: 'Complex cedar roof with skylight and scattered replacement shingles',
+        caption: 'Complex roof repairs with skylight',
+      },
+      {
+        src: '/gallery/tile-repair-3.jpg',
+        alt: 'Multi-gable cedar roof with dormer and brick facade showing repair patches',
+        caption: 'Multi-gable roof with dormer repairs',
+      },
+      {
+        src: '/gallery/tile-replace.jpg',
+        alt: 'Expansive multi-gabled cedar shingle roof from elevated view',
+        caption: 'Expansive cedar roof — repair overview',
+      },
+      {
+        src: '/gallery/tile-replacement.jpg',
+        alt: 'Complex cedar roof with metal valley flashing and overlapping shakes',
+        caption: 'Valley and ridge cedar shake work',
+      },
       {
         src: '/gallery/tile-repair-damaged.jpg',
         alt: 'Weathered cedar roof with bright new replacement shingles installed throughout',
@@ -94,18 +154,18 @@ export const GALLERY_SECTIONS = [
 
 export const FEATURED_PHOTOS = [
   {
+    src: '/gallery/shingle-cleaning.jpg',
+    alt: 'Soft-wash wand restoring weathered grey cedar shingles to natural tan wood color',
+    caption: 'Soft-wash cleaning — weathered vs. restored cedar',
+  },
+  {
+    src: '/gallery/roof-shingle-replace.jpg',
+    alt: 'Cedar roof with dormers showing new replacement shingles and active repair work',
+    caption: 'Active cedar shingle repair on dormered roof',
+  },
+  {
     src: '/gallery/maintenance-1.jpg',
     alt: 'Large brick home with a weathered cedar shake roof under a clear blue sky',
     caption: 'Cedar shake roof on brick residence — Chicagoland',
-  },
-  {
-    src: '/gallery/cedar-maintenance-chicago.jpg',
-    alt: 'Cedar roof with a vertical strip of new reddish-brown replacement shingles',
-    caption: 'Targeted cedar shingle repair — Chicago-area home',
-  },
-  {
-    src: '/gallery/tile-repair-damaged.jpg',
-    alt: 'Weathered cedar roof with bright new replacement shingles installed throughout',
-    caption: 'Individual shingle replacements across weathered cedar',
   },
 ];
