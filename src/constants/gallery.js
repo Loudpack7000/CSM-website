@@ -11,6 +11,46 @@ export const GALLERY_SECTIONS = [
         caption: 'Soft-wash cleaning — weathered vs. restored cedar',
       },
       {
+        src: '/gallery/before-cleaning-rear.jpg',
+        alt: 'White home with weathered silver-grey cedar roof before cleaning',
+        caption: 'Before cleaning — weathered cedar roof',
+      },
+      {
+        src: '/gallery/before-cleaning-grey-siding.jpg',
+        alt: 'Grey-sided home with dark weathered cedar shingles before cleaning',
+        caption: 'Before cleaning — cedar roof ready for restoration',
+      },
+      {
+        src: '/gallery/during-cleaning-front.jpg',
+        alt: 'White home with ladder on cedar roof during soft-wash cleaning',
+        caption: 'During cleaning — front elevation',
+      },
+      {
+        src: '/gallery/during-cleaning-rear.jpg',
+        alt: 'Rear view of cedar roof while cleaning is in progress',
+        caption: 'During cleaning — rear elevation',
+      },
+      {
+        src: '/gallery/during-cleaning-closeup.jpg',
+        alt: 'Close-up of cedar shingles showing mixed tones during restoration',
+        caption: 'Restoration in progress — cedar roof surface',
+      },
+      {
+        src: '/gallery/after-cleaning-rear.jpg',
+        alt: 'White home with restored light-tan cedar roof after cleaning',
+        caption: 'After cleaning — restored rear elevation',
+      },
+      {
+        src: '/gallery/after-cleaning-completed.jpg',
+        alt: 'Completed cedar roof cleaning on white home viewed from backyard',
+        caption: 'Completed cleaning — restored cedar roof',
+      },
+      {
+        src: '/gallery/after-cleaning-hip.jpg',
+        alt: 'Close-up of cleaned cedar hip with touch-up replacement shingles',
+        caption: 'Cleaned cedar hip — detail finish',
+      },
+      {
         src: '/gallery/tile-cleaning-2.jpg',
         alt: 'Technician soft-washing cedar shingles at a roof peak with gentle equipment',
         caption: 'Gentle cleaning at roof peak',
@@ -154,18 +194,18 @@ export const GALLERY_SECTIONS = [
 
 export const FEATURED_PHOTOS = [
   {
+    src: '/gallery/before-cleaning-rear.jpg',
+    alt: 'White home with weathered silver-grey cedar roof before cleaning',
+    caption: 'Before cleaning — weathered cedar roof',
+  },
+  {
+    src: '/gallery/after-cleaning-completed.jpg',
+    alt: 'Completed cedar roof cleaning on white home viewed from backyard',
+    caption: 'Completed cleaning — restored cedar roof',
+  },
+  {
     src: '/gallery/shingle-cleaning.jpg',
     alt: 'Soft-wash wand restoring weathered grey cedar shingles to natural tan wood color',
     caption: 'Soft-wash cleaning — weathered vs. restored cedar',
-  },
-  {
-    src: '/gallery/roof-shingle-replace.jpg',
-    alt: 'Cedar roof with dormers showing new replacement shingles and active repair work',
-    caption: 'Active cedar shingle repair on dormered roof',
-  },
-  {
-    src: '/gallery/maintenance-1.jpg',
-    alt: 'Large brick home with a weathered cedar shake roof under a clear blue sky',
-    caption: 'Cedar shake roof on brick residence — Chicagoland',
   },
 ];
